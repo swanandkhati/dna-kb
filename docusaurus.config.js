@@ -16,18 +16,19 @@ const config = {
   favicon: 'img/phoenix_group_bird_only.ico',
 
   // Set the production url of your site here
-  url: 'HTTP://git.pi108.net/',
+  url: 'https://swanandkhati.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/dna-kb/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'skhati', // Usually your GitHub org/user name.
-  projectName: 'support-phoenix', // Usually your repo name.
+  organizationName: 'swanandkhati', // Usually your GitHub org/user name.
+  projectName: 'dna-kb', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  trailingSlash: false,
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you

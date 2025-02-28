@@ -15,7 +15,7 @@ Please click on of the frequently used modules to jump directly, or click on the
 <div className="tile-container">
 
   <div className="tile">
-  <a href="/docs/dna-knowledge-base/onboarding-documents/brd">
+  <a href="/dna-kb/docs/dna-knowledge-base/onboarding-documents/brd">
 
     <h3><strong>Business Requirement Document</strong></h3>
     <p>
@@ -25,7 +25,7 @@ Please click on of the frequently used modules to jump directly, or click on the
   </div>
 
   <div className="tile">
-  <a href="/docs/dna-knowledge-base/onboarding-documents/wbs">
+  <a href="/dna-kb/docs/dna-knowledge-base/onboarding-documents/wbs">
 
     <h3><strong>Work Breakdown Sheet</strong></h3>
     <p>
@@ -35,7 +35,7 @@ Please click on of the frequently used modules to jump directly, or click on the
   </div>
 
   <div className="tile">
-  <a href="/docs/dna-knowledge-base/onboarding-documents/mom-templates">
+  <a href="/dna-kb/docs/dna-knowledge-base/onboarding-documents/mom-templates">
 
     <h3><strong>Minutes of Meeting</strong></h3><br />
     <p>

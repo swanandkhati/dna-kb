@@ -15,7 +15,7 @@ Please click on one of the tiles below to jump directly, or click on the next bu
 <div className="tile-container">
 
   <div className="tile">
-  <a href="/docs/dna-knowledge-base/coding-standards/snowflake">
+  <a href="/dna-kb/docs/dna-knowledge-base/coding-standards/snowflake">
 
     <h3><strong>Snowflake</strong></h3>
     <p>
@@ -25,7 +25,7 @@ Please click on one of the tiles below to jump directly, or click on the next bu
   </div>
 
   <div className="tile">
-  <a href="/docs/dna-knowledge-base/coding-standards/powerbi">
+  <a href="/dna-kb/docs/dna-knowledge-base/coding-standards/powerbi">
 
     <h3><strong>PowerBI</strong></h3>
     <p>
@@ -35,7 +35,7 @@ Please click on one of the tiles below to jump directly, or click on the next bu
   </div>
 
   <div className="tile">
-  <a href="/docs/dna-knowledge-base/coding-standards/sql-nomenclature">
+  <a href="/dna-kb/docs/dna-knowledge-base/coding-standards/sql-nomenclature">
 
     <h3><strong>SQL Nomenclature</strong></h3>
     <p>
@@ -45,7 +45,7 @@ Please click on one of the tiles below to jump directly, or click on the next bu
   </div>
 
    <div className="tile">
-  <a href="/docs/dna-knowledge-base/coding-standards/php">
+  <a href="/dna-kb/docs/dna-knowledge-base/coding-standards/php">
 
     <h3><strong>PHP</strong></h3>
     <p>
@@ -55,7 +55,7 @@ Please click on one of the tiles below to jump directly, or click on the next bu
   </div>
 
   <div className="tile">
-  <a href="/docs/dna-knowledge-base/coding-standards/mulesoft">
+  <a href="/dna-kb/docs/dna-knowledge-base/coding-standards/mulesoft">
 
     <h3><strong>MuleSoft</strong></h3>
     <p>

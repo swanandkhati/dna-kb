@@ -15,7 +15,7 @@ Please click on of the frequently used modules to jump directly, or click on the
 <div className="tile-container">
 
   <div className="tile">
-  <a href="/docs/dna-knowledge-base/technical-documentation/data_lineage">
+  <a href="/dna-kb/docs/dna-knowledge-base/technical-documentation/data_lineage">
 
     <h3><strong>Data Lineage in DNA</strong></h3>
     <p>
@@ -25,7 +25,7 @@ Please click on of the frequently used modules to jump directly, or click on the
   </div>
 
   <div className="tile">
-  <a href="/docs/dna-knowledge-base/technical-documentation/version_control_in_dna">
+  <a href="/dna-kb/docs/dna-knowledge-base/technical-documentation/version_control_in_dna">
 
     <h3><strong>Version Control</strong></h3><br />
     <p>
