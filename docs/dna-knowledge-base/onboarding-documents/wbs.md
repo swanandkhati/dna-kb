@@ -71,5 +71,5 @@ Contains the following columns
 
  - - -
 
-#### <a href="/dna-kb/static/files/dna-knowledge-base/documentation-templates/work-breakdown-sheet-template.xlsx" download>Download the WBS template</a>
+#### <a href="/dna-kb/files/dna-knowledge-base/documentation-templates/work-breakdown-sheet-template.xlsx" download>Download the WBS template</a>
 

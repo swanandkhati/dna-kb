@@ -36,4 +36,4 @@ Example:```brd_SQL-1234_dec-31-2000```
 
 - Please follow this nomenclature for easy looking up of previous BRDs.
 
-#### <a href="/dna-kb/static/files/dna-knowledge-base/documentation-templates/business-requirement-document-template_v2.docx" download>Download the BRD template</a>
+#### <a href="/dna-kb/files/dna-knowledge-base/documentation-templates/business-requirement-document-template_v2.docx" download>Download the BRD template</a>
