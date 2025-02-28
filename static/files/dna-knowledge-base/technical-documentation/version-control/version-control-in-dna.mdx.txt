@@ -1,0 +1,179 @@
+Version Control in DNA
+
+## Introduction
+
+Version Control is an important part of any development process. It helps revert changes, as well as track forward changes effectively to ensure smooth and ongoing development.
+
+Version control also helps us keep the product afloat in case of bugs, crashes, production issues, or any other unlikely event(s) which may hamper the product.
+
+Another useful feature of version control is to let various teams work on their own thing, collaborate, and maintain multiple versions of the product.
+
+### Objectives of Version Control
+
+\- To maintain a history of changes in the codebase.
+
+\- To enable collaborative development across teams.
+
+\- To ensure the stability and reliability of releases.
+
+\- To streamline the review and approval processes for code changes.
+
+### Version Control Tool/Platform
+
+At The Phoenix Group, we use GitHub for version control.
+
+Link: [https://att.sharepoint.com/sites/DevCentral/SitePages/Logging-into-GitHub-with-User-ID(1).aspx](https://att.sharepoint.com/sites/DevCentral/SitePages/Logging-into-GitHub-with-User-ID\(1\).aspx)
+
+NOTE: To open the GitHub repository, you will need to login to the AT&T HVD first.
+
+### Key Features
+
+\- Branching, forking, and merging.
+
+\- Distributed or centralized repository support.
+
+\- Integration with CI/CD pipelines.
+
+### Repository Structure
+
+**Master/Main:** This is the most important branch of the entire project. This branch is NOT TO BE TOUCHED. The master branch can only be used to clone or pull data from.
+
+As a developer, do not, under any circumstances, push your code to master branch.
+
+**Development:** This branch will be cloned from the master during every subsequent development cycle. All new features/changes/fixes, etc. must be developed within this branch.
+
+Note: It is recommended you create your own sub-branches for your specific features and develop and push your code to your individual sub-branch.
+
+Before sending for production, all sub-branches can then be merged into a single production branch.
+
+**Feature:** These branches are specific to the individual features each team will be working on. Each feature branch will be cloned form the development branch.
+
+**UAT / Release :** This is where all the development code will be pushed to – this branch is strictly for use by the QA team.
+
+**Production:** When all changes are complete to a satisfactory level, the code from the QA branch may be pushed to the production branch – this branch is shared with the deployment team who pull from the production branch to deploy to the prod server.
+
+**Deployment:** The deployment team may create a deployment branch if they need and deploy the latest/current version to production environment.
+
+**Hot Fix:** This branch is cloned from the master in case of any large scale or critical post-production issues and deployed while production issues are being fixed.
+
+### Branching and Merging Strategy
+
+In DNA production and development, we follow the following branching and merging strategy to ensure optimal and smooth work that offers the best results every time:
+
+Flow is as follows:
+
+1.      Development cycle starts.  
+  
+
+2.      Development team clones the {MASTER} branch into the {DEVELOPMENT} branch.  
+  
+
+3.      Each sub-teams then clone the {DEVELOPMENT} branch into their own sub-branches.  
+  
+
+4.      When development is done, merge all the branches back into the {DEVELOPMENT} branch.  
+  
+
+5.      The {DEVELOPMENT} branch is cloned into the {UAT} branch.  
+  
+
+6.      {UAT} is cloned into / the {PRODUCTION} branch after testing.  
+  
+
+7.      Deployment team then clones the {PRODUCTION} branch into the {DEPLOYMENT} branch.  
+  
+
+8.      Deployment deploys code and does post-prod testing.
+
+DO NOT MERGE THE PRODUCTION BRANCH WITH THE MASTER BRANCH YET.
+
+9.      In case of post-prod issues, the master branch will be cloned into a {HOT FIX} branch and deployed.  
+  
+
+10.  ONLY AFTER THE CURRENT BUILDS ARE DEEMED TO BE STABLE WITH ALL CHANGES/FEATURES/FIXES, {PRODUCTION} branch is merged with {MASTER}.
+
+### Conventions
+
+It is expected of all teams working on DNA, its projects and initiatives to follow the same naming conventions along with the aforementioned branching and merging strategy.
+
+This will create a standardized and uniform version control system that everyone in the entire project can independently understand and get on board with.
+
+Use small characters, even though this guide has used capitals to name all your branches.
+
+Use hyphens to separate words in the same norm and underscores to separate the norms. For example, a feature branch that seeks to implement a tail spend dashboard in development phase can be named tail-spend-dashboard\_php\_development. Here, tail spend dashboard is one norm, php is another and development is another. Those three have been separated by an underscore.
+
+### Commit Guidelines
+
+**Frequency:** Usual development guidelines say, “Every logical change should be committed.”
+
+For DNA, we follow the same guiding principle of committing every logical change.
+
+**Message Format:** Start with a capitalized verb (e.g., "Add", "Fix", "Update") and then describe your change. For example, “Fix: Resolve API timeout issue in authentication module”.
+
+There is no further restriction on how a commit message should be.
+
+### Merge Protocol
+
+·         Use pull requests (PRs) or merge requests (MRs) for all merges.
+
+·         Perform peer reviews and automated testing before merging.
+
+·         Resolve conflicts before integration.
+
+### Access and Permissions
+
+·         **Developers:** Read/write access to \`feature\` and \`develop\` branches.
+
+·         **Reviewers:** Approval rights for Pull Requests / Merge Requests.
+
+·         **Admins:** Manage repository settings and permissions.
+
+### Continuous Integration/Continuous Deployment (CI/CD)
+
+\- Integrate version control with CI/CD tools.
+
+\- Trigger automated tests on pull requests.
+
+\- Deploy code from {DEPLOYMENT} branch only.
+
+### Backup and Recovery
+
+\- Enable periodic backups of the repository.
+
+\- Define recovery procedures in case of data loss.
+
+### Customization
+
+This document is designed to only serve as a baseline. For any additional version control operation that lies outside of the purview of this document, please engage with stakeholders to adapt the practices based on project-specific needs.
+
+These needs can be:
+
+·         Additional branches or workflows.
+
+·         Integration with other tools (e.g., JIRA, Jenkins).
+
+·         Enhanced permissions or access controls.
+
+### References
+
+\- Official documentation for GitHub can be found here: [https://docs.github.com/en](https://docs.github.com/en) .
+
+  
+
+### Annexure
+
+#### Naming Convention Table
+
+| Name | Lifecycle | Type | Protected | Environment Name | Required/optional | Data | prefixes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| prod/master | Long-lived | Shared | Yes | DATAOPS_ENV_NAME_PROD | Required | Ingested | prod/ |
+| release | Long-lived | Shared | Yes | DATAOPS_ENV_NAME_RELEASE | Optional, basic level of maturity needed | Ingested | release/ |
+| dev | Long-lived | Shared | No | DATAOPS_ENV_NAME_DEV | Optional, basic level of maturity required | Cloned | dev/ |
+| feature | Short-lived | Individual | No | DATAOPS_PREFIX_FB_FEATURE_BRANCH_NAME | Should be used for all individual changes | Cloned | feature/ |
+| hotfix | Short-lived | Individual | No | DATAOPS_PREFIX_HOTFIX_BRANCH_NAME | Optional, basic level of maturity required | Cloned | hotfix/ |
+| docs | Long-lived | Shared | No | DATAOPS_PREFIX_DOCs_BRANCH_NAME | Optional, basic level of maturity required | Ingested | docs/ |
+
+### Flow Illustration
+
+![A diagram of a diagram
+Description automatically generated with medium confidence](file:///C:/Users/skhati/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png)

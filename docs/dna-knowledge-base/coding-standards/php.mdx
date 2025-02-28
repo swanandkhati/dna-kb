@@ -1,0 +1,361 @@
+---
+title: Coding Standards - PHP
+sidebar: coding_standards_sidebar
+sidebar_position: 5
+---
+import FileTree from '@site/src/components/FileTree';
+
+## Introduction 
+    
+
+In DNA, PHP is used for front end development. Subsequently, the front-end project in DNA is a web application built using Laravel (PHP) & JavaScript. The application communicates with APIs built using MuleSoft for integration and uses Snowflake as its database. This documentation covers coding conventions, architecture, and environment setup. 
+
+### 2. Naming Conventions
+    
+*   **Controller Naming Convention**: Controllers should be named using the singular form of the resource they manage, with _Controller_ appended. 
+
+Example: UserController, OrderController
+
+*   **Middleware Naming**: Middleware should have names that describe their purpose. 
+
+Example: Authenticate, LogRequest. 
+
+<!-- Controllers: Singular noun + "Controller" (e.g., UserController, OrderController) Middleware: Descriptive of function (e.g., Authenticate, LogRequest) Services:   -->
+
+### 3. Library Dependencies 
+    
+*   **Composer**: List all libraries installed via Composer and their versions. 
+
+Example:
+```php
+"require":
+    {
+    "php": "^8.2",
+    "avadim/fast-excel-reader": "^2.22",
+    "avadim/fast-excel-writer": "^6.2",
+    "azure-oss/storage-blob-laravel": "^1.2",
+    "guzzlehttp/guzzle": "^7.9",
+    "laravel/framework": "^11.9",
+    "laravel/sanctum": "^4.0",
+    "laravel/tinker": "^2.10",
+    "setasign/fpdf": "^1.8"
+    }, 
+```
+*   Custom Libraries: If there are any custom libraries in the project, they should be documented in a similar manner, explaining their role. 
+    
+
+### 4. Request Life Cycle of PHP Laravel 
+
+![PHP Laravel Request Lifecycle](/img/dna/coding-standards-img/request-lifecycle-of-php-laravel.png "PHP Laravel Request Lifecycle")
+
+### 5. Coding Standard of Controller files  
+
+```php
+ <?php
+
+namespace App\Http\Controllers; // Make sure you have the correct namespace
+
+use Throwable;
+use App\Http\Requests\LoginRequest; // Correct the use statement
+use App\Api\Services\UserService;
+use Illuminate\Http\JsonResponse; // Correct the use statement
+use Illuminate\Http\Request; // Import Request class if needed
+
+class UserController extends Controller
+{
+    private UserService $userService;
+
+    public function __construct(UserService $userService) // Correct method name to __construct
+    {
+        $this->userService = $userService; // Correct assignment
+    }
+
+    public function login(LoginRequest $request): JsonResponse
+    {
+        try {
+            $validatedData = $request->validated();
+            $reply = $this->userService->login($validatedData);
+            return response()->json($reply);
+
+        } catch (Throwable $e) {
+            // Handle exceptions implementing the Throwable interface
+             // Log the exception for debugging.  Crucially important!
+            \Log::error($e);  // Or use your preferred logging method.  This is essential.
+
+            return response()->json(['error' => 'An error occurred during login'], 500); // Add a 500 status code
+        }
+    }
+}
+``` 
+    
+
+### 6. Folder and file structure
+
+<FileTree>
+  <FileTree.Folder name="laravel-project">
+    <FileTree.Folder name="app"></FileTree.Folder>
+    <FileTree.Folder name="bootstrap"></FileTree.Folder>
+    <FileTree.Folder name="config"></FileTree.Folder>
+    <FileTree.Folder name="database"></FileTree.Folder>
+    <FileTree.Folder name="public"></FileTree.Folder>
+    <FileTree.Folder name="resources"></FileTree.Folder>
+    <FileTree.Folder name="storage"></FileTree.Folder>
+    <FileTree.Folder name="tests"></FileTree.Folder>
+    <FileTree.Folder name="vendor"></FileTree.Folder>
+    <FileTree.File name=".env" />
+    <FileTree.File name=".env.example" />
+    <FileTree.File name=".gitattributes" />
+    <FileTree.File name=".gitignore" />
+    <FileTree.File name=".artisan" />
+    <FileTree.File name="composer.json" />
+    <FileTree.File name="composer.lock" />
+    <FileTree.File name="gulpfile.js" />
+    <FileTree.File name="package.json" />
+    <FileTree.File name="phpunit.xml" />
+    <FileTree.File name="readme.md" />
+    <FileTree.File name="server.php" />
+  </FileTree.Folder>
+</FileTree>
+
+### 7. Middleware
+
+When importing, creating, developing, or integrating middleware, describe all relevant custom middleware in the project, along with its purpose and how it’s registered.<br />
+Use the comment feature extensively to achieve this. Your comments will be necessary for other devs to understand the code.
+
+```php
+ Example:
+//     app/Http/Middleware/Authenticate.php
+//     public function handle ($request, Closure $next)
+//      {
+//      if (auth ()->guest ())
+//          {
+//          return redirect('login');
+//          }
+//      return $next($request);
+//      }
+```
+
+### 8. Code Commenting:  
+
+It is the convention in DNA that we add comments above each function to provide a clear explanation of the parameters it accepts and the type of value(s) that function returns.
+
+Doing this makes the developer's intent more explicit while improving clarity and flow.
+
+Sample Code: 
+
+```PHP
+/** 
+ * Handles the request to view all supplier user searches.
+ * 
+ * This function retrieves the view Flag from the request and constructs an input array
+ * with the current user's session details. It then calls the CurlMuleController
+ * to fetch filtered user supplier search data from the Mule API.
+ * 
+ * @param Request $request The incoming request containing the view flag.
+ * @return mixed The filtered user supplier searches data.
+ **/
+
+public function viewAll(Request $request) {
+    $flag = $request->viewflag; // Use $request, not request
+
+    $inputLists = [ // Use short array syntax
+        "userId" => Session::get('curr_user_id'),
+        "attuid" => Session::get('userName'),
+        "flag" => $flag // Corrected assignment operator
+    ];
+
+    $objCurlMule = new CurlMuleController();
+    $supplierUserSearches = $objCurlMule->curlMuleWS('filterUserSupplierSearchesData', $inputLists);
+    return $supplierUserSearches;
+}
+```
+
+### 9. Input Validation: 
+
+In validation convention, we add both, the client side and server-side validation.
+<br />We use JS for client-side validation and MuleSoft & SnowFlake for a server-side validation of inputs.
+
+Sample Code:
+
+```javascript
+$("#form").validate({
+    highlight: function(label){
+        $(label).closest('.form-group').removeClass('has-success').addClass('has-error');
+	},
+    success: function(label){
+        $(label).closest('.form-group').removeClass('has-error');
+        label.remove();
+    },
+    errorPlacement: function(error, element) {
+        var placement = element.closest('.input-group');
+        if (!placement.get0) {
+            placement = element;
+        }
+        if (error.text() !== '') {
+            placement.after(error);
+        }
+    }
+});
+```
+
+```javascript
+/**
+* deleteTempFile function
+*
+* @param [type] $file
+* @param [type] $outputDirPath
+* @return void
+*/
+
+public static function deleteTempFile($file, $outputDirPath)
+{
+	if (!is_validate_file_extension($file, self::$allowedFileextension))
+	{
+	return false;
+	}
+	self::$file = $file;
+	self::#outputDirPath = $outputDirPath;
+
+	$fileName = $file;
+	if(self::$outputDirPath == 'assets/SupportDoc/')
+	{
+	$fileName = 'Support_Document.pdf';
+	}
+	else
+	{
+	$fileName = str_replace("..", ".", $fileName); //required in case a user looks for parent folder files.
+	}
+	$filePath = $outputDirPath . $fileName;
+	if (file_exists($filePath))
+		{
+		Storage::disk('public')->delete($filePath);
+		}
+	return true;
+}
+``` 
+
+
+### 10. JavaScript Practices:
+
+The frontend uses AJAX techniques for asynchronous API calls to avoid page reloads. AJAX techniques best enable fast and responsive front end in case of DNA.
+
+In addition, consistent naming conventions have been used for naming classes (```CamelCase```) and methods (```camelCase```). 
+
+Note that the first letter in the two examples is in a different case. Please use context based acumen when naming.
+
+```$(document).ready()``` is used for DOM manipulation after the page loads. 
+
+ 
+**JavaScript Documentation:**
+
+1\. We use JavaScript to make API requests asynchronously through AJAX, enabling the webpage to retrieve data from the server without requiring a page reload. 
+
+This version explains the use of JavaScript and AJAX for making asynchronous API requests and highlights the advantage of not needing to reload the page. 
+
+Sample Code:
+
+```javascript
+
+$.ajax({
+    type: 'post';
+    url: '/subscribeToAlert',
+    data:{
+        subscription: subscription,
+        alert_id: alert_id,
+    },
+    success function (data) {...},
+    });
+
+```
+
+**Naming Conventions**
+
+All class names should start with an uppercase letter and follow camel case where the first letter of each subsequent word is capitalized. 
+For example, ```UserProfile```, ```OrderDetails```.
+
+*   JavaScript method names should be written in ```camelCase```, where the first letter is lowercase, and each subsequent word starts with an uppercase letter. Eg : ```calculateTotal()```, ```getUserInfo()```.
+    
+*   Unlike other languages that use underscores (\_) in method names, JavaScript typically uses ```camelCase``` for method names. 
+    
+*   In DNA, we use ```$(document)``` ready function () {} to load the DOM during page loading. 
+    
+
+Sample Code:   
+
+```javascript
+
+$(document).ready(function())
+    {
+        $('multiselectCategoryNames').multiselect({...});
+        $('multiselectCategoryNames').siblings('.btn-group').children('button').addClass('cls-input-field');
+        $('multiselectCategoryNames').siblings('.btn-group').css('width', '100%');
+        $('multiselectCategoryNames').siblings('.btn-group').find('input-group-addon').remove();
+        var subscription = '';
+        $('.subscribe-alert').change(function(){...});
+
+        $("#alertSubscribe").on("hidden.bs.modal", function(){...});
+    }
+
+```
+
+### Summary
+
+1\. Project Overview: 
+
+*   The web application uses Laravel (PHP) for the backend, JavaScript for the frontend, Mule API for integration, and Snowflake as the database.    
+
+*   The documentation focuses on coding conventions, architecture, environment setup, and various practices within the project. 
+
+  2\. Naming Conventions: 
+
+*   Controllers are named using the singular form of the resource + "Controller" (e.g., UserController). 
+
+*   Middleware names should describe their function (e.g., Authenticate, LogRequest). 
+
+*   Services should have clear and descriptive names indicating their purpose. 
+
+3\. Library Dependencies: 
+
+*   Composer dependencies are listed, highlighting key libraries like Laravel, Guzzle, and Sanctum. 
+
+*   Custom libraries, if any, should be documented with a description of their role in the project.  
+
+4\. Request Life Cycle: 
+
+*   Describes how requests flow through Laravel, but further detail may be needed to expand the lifecycle (e.g., from request handling to response generation). 
+
+5\. Controller Coding Standards: 
+
+*   The documentation encourages clean, organized code, with a focus on following best practices for controller files.     
+
+6\. Folder and File Structure: 
+
+*   No details were given but ensuring a logical and organized structure is essential. 
+
+7\. Middleware: 
+
+*   Describes how custom middleware is created and used, with an example provided for handling authentication. 
+
+8\. Code Commenting: 
+
+*   Comments should clarify the function's purpose, parameters, and return types to improve code readability and maintainability. 
+
+9\. Input Validation: 
+
+*   Both client-side (using JavaScript) and server-side (via Mule API and Snowflake) validation are implemented to ensure data integrity. 
+
+10\. JavaScript Practices: 
+
+*   The frontend uses AJAX for asynchronous API calls to avoid page reloads.     
+
+*   Consistent naming conventions are used for classes (CamelCase) and methods (camelCase). 
+
+*   $(document). ready() is used for DOM manipulation after the page loads. 
+
+
+### Conclusion
+
+This PHP & JS documents should provide a clear and structured overview of the codebase and how development has been done in DNA.
+This document hopes to ensure that anyone working on the project is able to follow the best practices that have been implemented for development in DNA and understand the architecture quickly.
+
+For any further help with any specific section, please feel free to connect with any of the senior developers from the front-end team!

@@ -1,0 +1,8 @@
+{
+  "label": "DNA - Knowledge Base",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Read all documentation related to DNA here. Please click on the module to jump directly, or click on the next button at the bottom pf the page to read one-by-one. You can also use the sidebar to jump to particular page at any point of time."
+  }
+}

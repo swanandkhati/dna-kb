@@ -1,0 +1,225 @@
+:root {
+  --ifm-color-primary: #009fdb; /* Main primary color */
+  --ifm-color-primary-dark: #008cc3; /* Slightly darker shade */
+  --ifm-color-primary-darker: #0074a7; /* Even darker shade */
+  --ifm-color-primary-darkest: #005e8c; /* Darkest shade */
+  --ifm-color-primary-light: #33b4e7; /* Slightly lighter shade */
+  --ifm-color-primary-lighter: #66cbed; /* Even lighter shade */
+  --ifm-color-primary-lightest: #99e2f3; /* Lightest shade */
+  --ifm-code-font-size: 100%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* :phoenix_heading {
+  --font-family: georgia;
+
+} */
+
+/* Hide the sidebar on the specific category page */
+.page-category-software-guides-center.docSidebarContainer {
+  display: none;
+}
+
+.page-category-software-guides-center.docMainContainer {
+  width: 100%;
+}
+
+@font-face {
+  font-family: 'georgia';
+  src: url('../../static/fonts/georgiaz.ttf') format('truetype');
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'georgia';
+  src: url('../../static/fonts/georgia.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'georgia';
+  src: url('../../static/fonts/georgiab.ttf') format('truetype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'georgia';
+  src: url('../../static/fonts/georgiai.ttf') format('truetype');
+  font-family: 'georgia';
+  src: url('../../static/fonts/georgiai.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: italic;
+}
+
+
+
+/* Usage example */
+body {
+  font-family: 'georgia', sans-serif !important;
+  font-family: 'georgia', sans-serif !important;
+}
+
+
+/* Tile container styling */
+.tile-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+/* Individual tile styling */
+.tile {
+  background-color: #fefefe;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  padding-top: 4rem;
+  width: 250px; /* Adjust width as needed */
+  height: 250px; /* Set a fixed height */
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tile:hover {
+  transform: scale(1.05);
+}
+
+.tile h3 {
+  color: var(--ifm-color-primary-darkest); /* Adjust color as needed */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.4rem;
+}
+
+.tile p {
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.demo-box{
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+}
+
+a {
+  color: var(--ifm-color-primary-darker) !important;
+  text-decoration: none !important;
+  text-decoration-color: var(--ifm-color-primary) !important; 
+}
+
+a:hover, a:focus {
+  text-decoration: underline !important;
+}
+
+.main_title{
+  font-family: 'Lato' !important;
+  font-size: xx-large;
+  font-weight: 800;
+}
+
+.footer a{
+  color: #fefefe !important;
+  text-decoration: none !important;
+  text-decoration-color: var(--ifm-color-primary) !important; 
+}
+
+.footer a:hover{
+  color: #fefefe !important;
+  text-decoration: underline !important;
+  text-decoration-color: #fefefe !important; 
+}
+
+.navbar a{
+  color: #000000 !important;
+  text-decoration: none !important;
+  text-decoration-color: var(--ifm-color-primary) !important; 
+  position: sticky !important;
+
+}
+
+.footer a:hover{
+  color: var(--ifm-color-primary) !important;
+  text-decoration: none !important;
+  text-decoration-color: #fefefe !important; 
+}
+
+.navbar a:hover{
+  color: #000000 !important;
+  text-decoration: underline !important;
+  text-decoration-color: black !important; 
+  position: static !important;
+
+}
+
+.button{
+  color: #000000 !important;
+  text-decoration: none !important;
+  text-decoration-color: black !important; 
+}
+
+.button:hover{
+  color: #000000 !important;
+  text-decoration: underline !important;
+  text-decoration-color: black !important; 
+}
+
+/* Custom background for the homepage hero section */
+.hero--primary {
+  background: url('/img/dna-banner.png') no-repeat center center;
+  background-size: cover;
+}
+
+/* Change title color */
+.main_title {
+  color: #1B2124; /* Your desired color for the title */
+}
+
+/* Change tagline color */
+.hero__subtitle {
+  color: #1B2124; /* Your desired color for the tagline */
+}
+
+.home-page-button:hover{
+  color: #fefefe !important;
+  text-decoration: none !important;
+}
+
+.file-tree ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.file-tree-folder-name {
+  font-weight: bold;
+}
+
+.file-tree-file-name {
+  /* Style file names if needed */
+}
+
+.file-tree-comment { /* Style for comments */
+  font-style: italic;
+  color: #777; /* Or any color you prefer */
+  margin-left: 10px; /* Adjust spacing */
+}
