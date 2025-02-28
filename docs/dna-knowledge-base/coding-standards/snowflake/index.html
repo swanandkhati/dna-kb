@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-dna-knowledge-base/coding-standards/snowflake" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Coding Standards - Snowflake | Knowledge Center | DNA</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="HTTP://git.pi108.net/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="HTTP://git.pi108.net/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="HTTP://git.pi108.net/docs/dna-knowledge-base/coding-standards/snowflake"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Coding Standards - Snowflake | Knowledge Center | DNA"><meta data-rh="true" name="description" content="This page elaborates the standards and guidelines for snowflake developers that they should be following when coding for DNA using snowflake."><meta data-rh="true" property="og:description" content="This page elaborates the standards and guidelines for snowflake developers that they should be following when coding for DNA using snowflake."><link data-rh="true" rel="icon" href="/img/phoenix_group_bird_only.ico"><link data-rh="true" rel="canonical" href="HTTP://git.pi108.net/docs/dna-knowledge-base/coding-standards/snowflake"><link data-rh="true" rel="alternate" href="HTTP://git.pi108.net/docs/dna-knowledge-base/coding-standards/snowflake" hreflang="en"><link data-rh="true" rel="alternate" href="HTTP://git.pi108.net/docs/dna-knowledge-base/coding-standards/snowflake" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Knowledge Center | DNA RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Knowledge Center | DNA Atom Feed"><link rel="stylesheet" href="/assets/css/styles.079a0bf4.css">
+<script src="/assets/js/runtime~main.cb26d083.js" defer="defer"></script>
+<script src="/assets/js/main.33e2f259.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/dna-logo.svg" alt="Phoenix Group Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/dna-logo.svg" alt="Phoenix Group Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Support Home</b></a><a class="navbar__item navbar__link" href="/kb-home">Knowledge Base Home</a></div><div class="navbar__items navbar__items--right"><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/dna-knowledge-base/coding-standards/coding-standards-introduction">Home Page - Coding Standards</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/docs/dna-knowledge-base/coding-standards/snowflake">Coding Standards - Snowflake</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/dna-knowledge-base/coding-standards/powerbi">Development Standards - PowerBI</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/dna-knowledge-base/coding-standards/sql-nomenclature">Development Standards - SQL Nomenclature</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/dna-knowledge-base/coding-standards/php">Coding Standards - PHP</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/dna-knowledge-base/coding-standards/mulesoft">Coding Standards - MuleSoft 4.4</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Coding Standards - Snowflake</span><meta itemprop="position" content="1"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Coding Standards - Snowflake</h1></header><p>This page elaborates the standards and guidelines for snowflake developers that they should be following when coding for DNA using snowflake.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="maintainability">Maintainability<a href="#maintainability" class="hash-link" aria-label="Direct link to Maintainability" title="Direct link to Maintainability">​</a></h3>
+<p>All Snowflake code must be commented for maintainability.</p>
+<p>An example of a file header is given below:</p>
+<hr>
+<p>/* <br>
+<strong>Procedure:</strong>          Stored Procedure Name<br>
+<strong>Create Date:</strong>        05/06/2023 (MM/DD/YYYY) <br>
+<strong>Author:</strong>             ATTUID <br>
+<strong>Description:</strong>        Verbose description of what the query does goes here. Be specific and don&#x27;t be afraid to say too much. More is better, than less, every single time. Think about <strong>&quot;what, when, where, how and why&quot;</strong> when authoring a description. <br>
+<strong>Parameter(s):</strong>       @param1 - description and usage <br>
+@param2 - description and usage <br>
+<strong>SUMMARY OF CHANGES</strong> <br>
+Date (DD/MM/YYYY)       Author       Comments<br>
+2018-03-22                         ATTUID     General formatting and added header information.</p>
+<p>*/</p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="creation-of-files-and-tables">Creation of Files and Tables<a href="#creation-of-files-and-tables" class="hash-link" aria-label="Direct link to Creation of Files and Tables" title="Direct link to Creation of Files and Tables">​</a></h3>
+<p>When creating new tables, please make sure to include the following columns:</p>
+<p>Use this example to understand:</p>
+<hr>
+<blockquote>
+<p>CREATE TABLE  TABLE_NAME <br>
+( <br>
+ID NUMBER(38,0) NOT NULL AUTOINCREMENT, -- Surrogate Key <br>
+INTEGRATION_ID VARCHAR(50), -- Unique Source Key <br>
+-- COL1 <br>
+-- COL2 <br>
+-- COL3 <br>
+W_INSERT_DT TIMESTAMP DEFAULT CURRENT_TIMESTAMP(), --Default Sysdate  <br>
+W_UPDATE_DT TIMESTAMP--Default Sysdate  <br>
+) <br></p>
+</blockquote>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="custom-objects">Custom Objects<a href="#custom-objects" class="hash-link" aria-label="Direct link to Custom Objects" title="Direct link to Custom Objects">​</a></h3>
+<p>The following standards should be followed for custom objects.</p>
+<ul>
+<li>Custom Tables must begin with CUST_*</li>
+<li>Fact Tables must end with *_F</li>
+<li>Fact Staging Tables must end with *_FS</li>
+<li>Fact Temporary Tables must end with *_FT</li>
+<li>Fact Staging Error Table must end with *_FSE</li>
+<li>Dimensional Tables must end with *_D</li>
+<li>Dimensional Stage Table must end with *_DS</li>
+<li>Dimensional Error Table must end with *_DSE</li>
+<li>Dimensional Temporary Table must end with *_DT</li>
+<li>Dimensional Hierarchy Table must end with *_DH</li>
+<li>Aggregation table must end with *_A</li>
+</ul>
+<p>Use this table for understanding:</p>
+<table><thead><tr><th>Table Type</th><th>Table Prefix</th><th>Table Suffix</th></tr></thead><tbody><tr><td>Dimension</td><td>CUST_</td><td>_D</td></tr><tr><td>Dimension Stage</td><td>CUST_</td><td>_DS</td></tr><tr><td>Dimension Temporary</td><td>CUST_</td><td>_DT</td></tr><tr><td>Dimension Staging Error</td><td>CUST_</td><td>_DSE</td></tr><tr><td>Dimension Hierarchy</td><td>CUST_</td><td>_DH</td></tr><tr><td>Fact Table</td><td>CUST_</td><td>_F</td></tr><tr><td>Fact Stage</td><td>CUST_</td><td>_FS</td></tr><tr><td>Fact Temporary</td><td>CUST_</td><td>_TF</td></tr><tr><td>Fact Staging Error</td><td>CUST_</td><td>_FSE</td></tr></tbody></table>
+<p>Following are examples of how the entire table name would be:</p>
+<ul>
+<li><strong>Name of a View</strong>: CUST_ff__V <em>where</em> V=View, ff=CPFR</li>
+<li><strong>Name of a table in SPEND</strong>: CUST_GBL_LOCATION_ALL_SCM_V</li>
+<li><strong>Sequence Table name:</strong> CUST_table_S <em>where</em> table=Description<br>
+// Table name, unless the table has more than one sequence. S=Sequence
+CUST_WARRANTY_RECORD_ID_S</li>
+<li><strong>Stored Procedure/ Function</strong>: CUST_ff _proc <br>CUST_PURCH_SUPPLIER_PROC</li>
+</ul></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/dna-knowledge-base/coding-standards/coding-standards-introduction"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Home Page - Coding Standards</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/dna-knowledge-base/coding-standards/powerbi"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Development Standards - PowerBI</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#maintainability" class="table-of-contents__link toc-highlight">Maintainability</a></li><li><a href="#creation-of-files-and-tables" class="table-of-contents__link toc-highlight">Creation of Files and Tables</a></li><li><a href="#custom-objects" class="table-of-contents__link toc-highlight">Custom Objects</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">The Phoenix Group Websites</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://phoenix.tech/" target="_blank" rel="noopener noreferrer" class="footer__link-item">The Phoenix Group</a></li><li class="footer__item"><a href="https://pi108.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">Phoenix Innovations</a></li><li class="footer__item"><a href="https://xcaliberinfotech.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">Xcaliber Infotech</a></li><li class="footer__item"><a href="https://bitmapper.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">Bit Mapper Integration Technologies</a></li><li class="footer__item"><a href="https://griffyn.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Griffyn Robotech</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Phoenix Innovations LLC, Static Project Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
