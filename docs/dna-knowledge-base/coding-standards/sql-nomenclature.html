@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-dna-knowledge-base/coding-standards/sql-nomenclature" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Development Standards - SQL Nomenclature | Knowledge Center | DNA</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://swanandkhati.github.io/dna-kb/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://swanandkhati.github.io/dna-kb/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://swanandkhati.github.io/dna-kb/docs/dna-knowledge-base/coding-standards/sql-nomenclature"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Development Standards - SQL Nomenclature | Knowledge Center | DNA"><meta data-rh="true" name="description" content="Midas Enterprise Program Specific"><meta data-rh="true" property="og:description" content="Midas Enterprise Program Specific"><link data-rh="true" rel="icon" href="/dna-kb/img/phoenix_group_bird_only.ico"><link data-rh="true" rel="canonical" href="https://swanandkhati.github.io/dna-kb/docs/dna-knowledge-base/coding-standards/sql-nomenclature"><link data-rh="true" rel="alternate" href="https://swanandkhati.github.io/dna-kb/docs/dna-knowledge-base/coding-standards/sql-nomenclature" hreflang="en"><link data-rh="true" rel="alternate" href="https://swanandkhati.github.io/dna-kb/docs/dna-knowledge-base/coding-standards/sql-nomenclature" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/dna-kb/blog/rss.xml" title="Knowledge Center | DNA RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/dna-kb/blog/atom.xml" title="Knowledge Center | DNA Atom Feed"><link rel="stylesheet" href="/dna-kb/assets/css/styles.1d33f7ea.css">
+<script src="/dna-kb/assets/js/runtime~main.e17d9c42.js" defer="defer"></script>
+<script src="/dna-kb/assets/js/main.7a5608d8.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/dna-kb/"><div class="navbar__logo"><img src="/dna-kb/img/dna-logo.svg" alt="Phoenix Group Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/dna-kb/img/dna-logo.svg" alt="Phoenix Group Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Support Home</b></a><a class="navbar__item navbar__link" href="/dna-kb/kb-home">Knowledge Base Home</a></div><div class="navbar__items navbar__items--right"><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/dna-kb/docs/dna-knowledge-base/coding-standards/coding-standards-introduction">Home Page - Coding Standards</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/dna-kb/docs/dna-knowledge-base/coding-standards/snowflake">Coding Standards - Snowflake</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/dna-kb/docs/dna-knowledge-base/coding-standards/powerbi">Development Standards - PowerBI</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/dna-kb/docs/dna-knowledge-base/coding-standards/sql-nomenclature">Development Standards - SQL Nomenclature</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/dna-kb/docs/dna-knowledge-base/coding-standards/php">Coding Standards - PHP</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/dna-kb/docs/dna-knowledge-base/coding-standards/mulesoft">Coding Standards - MuleSoft 4.4</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/dna-kb/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Development Standards - SQL Nomenclature</span><meta itemprop="position" content="1"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Development Standards - SQL Nomenclature</h1></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="midas-enterprise-program-specific">Midas Enterprise Program Specific<a href="#midas-enterprise-program-specific" class="hash-link" aria-label="Direct link to Midas Enterprise Program Specific" title="Direct link to Midas Enterprise Program Specific">​</a></h2>
+<p>This page elaborates the standards and guidelines for snowflake developers that they should be following when naming various tables, schema, views, facts, dimensions, and any other objects.
+The guidelines in this document are specific only for the database and its related schema for Midas Enterprise.</p>
+<p>For DNA initiatives such as SPEND and CPFR, please refer to their respective guidelines.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="general-naming-conventions">General Naming Conventions<a href="#general-naming-conventions" class="hash-link" aria-label="Direct link to General Naming Conventions" title="Direct link to General Naming Conventions">​</a></h3>
+<p>All database objects, including schemas, tables, columns, constraints, and aliases, must strictly use lowercase letters to maintain consistency and enhance readability. <strong>Avoid using uppercase, mixed-case, or special characters in object names.</strong></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="table-naming-conventions">Table Naming Conventions<a href="#table-naming-conventions" class="hash-link" aria-label="Direct link to Table Naming Conventions" title="Direct link to Table Naming Conventions">​</a></h3>
+<p>Please follow the prefixes below for clear and consistent identification of table types:</p>
+<p><strong>Fact Tables:</strong></p>
+<p>Prefix with <code>fact_</code> to clearly identify tables storing measurable, quantitative data.</p>
+<p>Examples:</p>
+<blockquote>
+<p><strong><code> fact_</code></strong><code>sales</code></p>
+<p><strong><code> fact_</code></strong><code>inventory</code></p>
+<p><strong><code> fact_</code></strong><code>transactions</code></p>
+</blockquote>
+<p><strong>Dimension Tables:</strong></p>
+<p>Prefix with <code>dim_</code> to identify tables storing descriptive, categorical information.</p>
+<p>Examples:</p>
+<blockquote>
+<p><strong><code>dim_</code></strong><code>customer</code></p>
+<p><strong><code>dim_</code></strong><code>product</code></p>
+<p><strong><code>dim_</code></strong><code>time</code></p>
+</blockquote>
+<p><strong>Staging Tables:</strong></p>
+<p>Prefix with <code>stg_</code> to identify intermediate tables used for raw data loading or temporary transformations.</p>
+<p>Examples:</p>
+<blockquote>
+<p><strong><code>stg_</code></strong><code>orders</code></p>
+<p><strong><code>stg_</code></strong><code>product_data</code></p>
+</blockquote>
+<p><strong>Bridge Tables:</strong></p>
+<p>Prefix with <code>bridge_</code>for tables resolving many-to-many relationships.</p>
+<p>Examples:</p>
+<blockquote>
+<p><strong><code>bridge_</code></strong><code>customer_order</code></p>
+<p><strong><code>bridge_</code></strong><code>product_category</code></p>
+</blockquote>
+<p><strong>Lookup Tables</strong></p>
+<p>Use the prefix <code>lookup_</code> for tables storing key-value pairs or reference data.</p>
+<p>Examples:</p>
+<blockquote>
+<p><strong><code>lookup_</code></strong><code>country_code</code></p>
+<p><strong><code>lookup_</code></strong><code>payment_status</code></p>
+</blockquote>
+<p><strong>Mapping Tables</strong></p>
+<p>Use the prefix <code>map_</code> for tables managing relationships between entities.</p>
+<p>Examples:</p>
+<blockquote>
+<p><strong><code>map_</code></strong><code>user_role</code></p>
+<p><strong><code>map_</code></strong><code>product_supplier</code></p>
+</blockquote>
+<p><strong>Intermediate Tables</strong></p>
+<p>Prefix with <code>int_</code> to indicate tables used for intermediate or transformation stages during data processing.</p>
+<p>Examples:</p>
+<blockquote>
+<p><strong><code>int_</code></strong><code>sales_cleaned</code></p>
+<p><strong><code>int_</code></strong><code>customer_temp</code></p>
+</blockquote>
+<p><strong>Audit Tables</strong></p>
+<p>Prefix with <code>audit_</code> to store metadata about changes, user activities, or data operations.</p>
+<p>Examples:</p>
+<blockquote>
+<p><strong><code>audit_</code></strong><code>sales_changes</code></p>
+<p><strong><code>audit_</code></strong><code>customer_updates</code></p>
+</blockquote>
+<p><strong>Log Tables</strong></p>
+<p>Prefix with <code>log_</code> to store system-level or application-specific logs for debugging and monitoring purposes.</p>
+<p>Examples:</p>
+<blockquote>
+<p><strong><code>log_</code></strong><code>data_load</code></p>
+<p><strong><code>log_</code></strong><code>api_calls</code></p>
+</blockquote>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="schema-naming-conventions">Schema Naming Conventions<a href="#schema-naming-conventions" class="hash-link" aria-label="Direct link to Schema Naming Conventions" title="Direct link to Schema Naming Conventions">​</a></h3>
+<p>Schemas must also follow consistent naming conventions for clarity.</p>
+<p>Examples:</p>
+<blockquote>
+<p>fact_</p>
+<p>dim_</p>
+<p>stg_</p>
+</blockquote>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="column-naming-conventions">Column Naming Conventions<a href="#column-naming-conventions" class="hash-link" aria-label="Direct link to Column Naming Conventions" title="Direct link to Column Naming Conventions">​</a></h3>
+<p>All tables in the schema shall use <code>id</code> as the primary key, including log and audit tables. Foreign keys should use the format <code>table_name_id</code>, where <code>table_name</code> is the name of the referenced table.</p>
+<p><strong>Fact Tables</strong></p>
+<ul>
+<li>
+<p><strong>Primary Key:</strong> <code>id</code> (Auto-generated surrogate key)</p>
+</li>
+<li>
+<p><strong>Foreign Keys:</strong> Use the referenced table name (e.g., <code>customer_id</code>, <code>product_id</code>).</p>
+</li>
+<li>
+<p><strong>Measures:</strong> Descriptive names for metrics (e.g., <code>sales_amount</code>, <code>profit_margin</code>).</p>
+</li>
+</ul>
+<p><strong>Dimension Tables:</strong></p>
+<ul>
+<li>
+<p><strong>Primary Key:</strong> <code>id</code> (Auto-generated surrogate key)</p>
+</li>
+<li>
+<p><strong>Attributes:</strong> Use meaningful names (e.g., <code>product_name</code>, <code>model_name</code>).</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="view-naming-conventions">View Naming Conventions<a href="#view-naming-conventions" class="hash-link" aria-label="Direct link to View Naming Conventions" title="Direct link to View Naming Conventions">​</a></h3>
+<p>Prefix with <code>vw_</code> to differentiate views from tables and other objects.</p>
+<p>Examples:</p>
+<blockquote>
+<p><strong><code>vw_</code></strong><code>sales_summary</code></p>
+<p><strong><code>vw_</code></strong><code>active_customers</code></p>
+</blockquote>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="common-columns-and-nomenclature">Common Columns and Nomenclature<a href="#common-columns-and-nomenclature" class="hash-link" aria-label="Direct link to Common Columns and Nomenclature" title="Direct link to Common Columns and Nomenclature">​</a></h3>
+<p>All tables should have these columns:</p>
+<ul>
+<li>id</li>
+<li>created_dt</li>
+<li>created_by</li>
+<li>modified_dt</li>
+<li>modified_by</li>
+</ul>
+<p>regardless of whether the table is ever going to be modified.</p>
+<p>All date columns should end with <code>_dt</code>.</p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="advantages-of-using-prefix-based-naming">Advantages of Using Prefix-Based Naming:<a href="#advantages-of-using-prefix-based-naming" class="hash-link" aria-label="Direct link to Advantages of Using Prefix-Based Naming:" title="Direct link to Advantages of Using Prefix-Based Naming:">​</a></h3>
+<ul>
+<li>
+<p><strong>Clarity:</strong> Easy to distinguish between facts, dimensions, and staging tables.</p>
+</li>
+<li>
+<p><strong>Consistency:</strong> Ensures uniformity across the database.</p>
+</li>
+<li>
+<p><strong>Maintainability:</strong> Simplifies debugging and understanding data lineage.</p>
+</li>
+</ul>
+<hr></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/dna-kb/docs/dna-knowledge-base/coding-standards/powerbi"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Development Standards - PowerBI</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/dna-kb/docs/dna-knowledge-base/coding-standards/php"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Coding Standards - PHP</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#midas-enterprise-program-specific" class="table-of-contents__link toc-highlight">Midas Enterprise Program Specific</a><ul><li><a href="#general-naming-conventions" class="table-of-contents__link toc-highlight">General Naming Conventions</a></li><li><a href="#table-naming-conventions" class="table-of-contents__link toc-highlight">Table Naming Conventions</a></li><li><a href="#schema-naming-conventions" class="table-of-contents__link toc-highlight">Schema Naming Conventions</a></li><li><a href="#column-naming-conventions" class="table-of-contents__link toc-highlight">Column Naming Conventions</a></li><li><a href="#view-naming-conventions" class="table-of-contents__link toc-highlight">View Naming Conventions</a></li><li><a href="#common-columns-and-nomenclature" class="table-of-contents__link toc-highlight">Common Columns and Nomenclature</a></li><li><a href="#advantages-of-using-prefix-based-naming" class="table-of-contents__link toc-highlight">Advantages of Using Prefix-Based Naming:</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">The Phoenix Group Websites</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://phoenix.tech/" target="_blank" rel="noopener noreferrer" class="footer__link-item">The Phoenix Group</a></li><li class="footer__item"><a href="https://pi108.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">Phoenix Innovations</a></li><li class="footer__item"><a href="https://xcaliberinfotech.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">Xcaliber Infotech</a></li><li class="footer__item"><a href="https://bitmapper.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">Bit Mapper Integration Technologies</a></li><li class="footer__item"><a href="https://griffyn.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Griffyn Robotech</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Phoenix Innovations LLC, Static Project Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
